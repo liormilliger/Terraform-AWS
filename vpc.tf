@@ -49,12 +49,12 @@ resource "aws_route" "default_route" {
 
 resource "aws_route_table_association" "liorm-TF-easy-pub-assoc-1a" {
     subnet_id = "liorm-TF-easy-us-east-1a"
-    route_table_id = "liorm-TF-easy-RT"
+    route_table_id = aws_route_table.liorm-TF-easy-RT.id
 }
 
 resource "aws_route_table_association" "liorm-TF-easy-pub-assoc-1b" {
     subnet_id = "liorm-TF-easy-us-east-1b"
-    route_table_id = "liorm-TF-easy-RT"
+    route_table_id = aws_route_table.liorm-TF-easy-RT.id
 }
 
 resource "aws_security_group" "liorm-TF-easy-SG" {
