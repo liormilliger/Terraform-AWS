@@ -5,13 +5,13 @@ resource "aws_lb_target_group" "liorm-TF-easy-ALB-TG" {
   vpc_id   = aws_vpc.liorm-TF-easy-vpc.id
 }
 
-resource "aws_lb_target_group_attachment" "liorm-tg-attach" {
+resource "aws_lb_target_group_attachment" "liorm-tg-attach-1a" {
   target_group_arn = aws_lb_target_group.liorm-TF-easy-ALB-TG.arn
   target_id        = aws_instance.liorm-TF-easy-EC2-1a.id
   port             = 80
 }
 
-resource "aws_lb_target_group_attachment" "liorm-tg-attach" {
+resource "aws_lb_target_group_attachment" "liorm-tg-attach-1b" {
   target_group_arn = aws_lb_target_group.liorm-TF-easy-ALB-TG.arn
   target_id        = aws_instance.liorm-TF-easy-EC2-1b.id
   port             = 80
