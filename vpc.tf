@@ -60,7 +60,8 @@ resource "aws_route_table_association" "liorm-TF-easy-pub-assoc-1b" {
 resource "aws_security_group" "liorm-TF-easy-SG" {
   name        = "liorm-TF-easy-SG"
   description = "Allow incoming HTTP traffic from your IP"
-
+  vpc_id = aws_vpc.liorm-TF-easy-vpc.id
+  
   ingress {
     from_port   = 80
     to_port     = 80
