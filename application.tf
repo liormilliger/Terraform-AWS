@@ -22,7 +22,7 @@ resource "aws_lb" "liorm-TF-ALB" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.liorm-TF-easy-SG.id]
-  subnets            = [aws_subnet.liorm-TF-easy-us-east-1a.id, aws_subnet.liorm-TF-easy-us-east-1a.id]
+  subnets            = [aws_subnet.liorm-TF-easy-us-east-1a.id, aws_subnet.liorm-TF-easy-us-east-1b.id]
 
   enable_deletion_protection = false
 
