@@ -53,7 +53,7 @@ resource "aws_route_table_association" "liorm-TF-easy-pub-assoc-1a" {
 }
 
 resource "aws_route_table_association" "liorm-TF-easy-pub-assoc-1b" {
-    subnet_id = aws_subnetliorm-TF-easy-us-east-1b.id
+    subnet_id = aws_subnet.liorm-TF-easy-us-east-1b.id
     route_table_id = aws_route_table.liorm-TF-easy-RT.id
 }
 
