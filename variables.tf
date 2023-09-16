@@ -8,6 +8,7 @@ description = "ID of my vpc"
 }
 
 variable "SG" {
+type = list(string)
 description = "SG for liorm-TF-easy instances"
 }
 
