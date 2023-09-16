@@ -21,7 +21,7 @@ resource "aws_lb" "liorm-TF-ALB" {
   name               = "liorm-TF-ALB"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = "${var.SG}"
+  security_groups    = ${var.SG}
   subnets            = ["${var.SUBNET_1A}", "${var.SUBNET_1B}"]
   enable_deletion_protection = false
 

@@ -9,7 +9,6 @@ description = "ID of my vpc"
 }
 
 variable "SG" {
-type = string
 description = "SG for liorm-TF-easy instances"
 }
 
