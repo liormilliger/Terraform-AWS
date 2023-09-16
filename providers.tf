@@ -8,7 +8,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "liorm-statelock"
+    bucket = "liorm-statestorage"
     key    = "data/terraform.tfstate"
     region = "us-east-1"
 
