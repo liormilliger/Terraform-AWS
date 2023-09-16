@@ -75,7 +75,7 @@ resource "aws_security_group" "liorm-TF-easy-SG" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["${var.HOME_IP}"]
+    cidr_blocks = ["${var.KARMI_IP}", "${var.HOME_IP}"]
   }
 
   egress {

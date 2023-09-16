@@ -1,3 +1,8 @@
+resource "aws_key_pair" "liorm-tf-key_rsa" {
+  key_name   = "liorm-tf-key_rsa"
+  public_key = file("~/.ssh/liorm-tf-key_rsa.pub")
+}
+
 resource "aws_instance" "liorm-TF-easy-EC2-1a" {
   ami                    = var.AMI
   instance_type          = "t3.micro"
