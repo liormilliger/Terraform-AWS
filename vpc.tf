@@ -7,7 +7,7 @@ resource "aws_vpc" "liorm-TF-easy-vpc" {
 }
 
 resource "aws_subnet" "liorm-TF-easy-us-east-1a" {
-  vpc_id     = ${var.VPC_ID}
+  vpc_id     = "${var.VPC_ID}"
   cidr_block = "10.0.1.0/24"
   availability_zone = "us-east-1a"
   tags = {
@@ -16,7 +16,7 @@ resource "aws_subnet" "liorm-TF-easy-us-east-1a" {
 }
 
 resource "aws_subnet" "liorm-TF-easy-us-east-1b" {
-  vpc_id     = ${var.VPC_ID}
+  vpc_id     = "${var.VPC_ID}"
   cidr_block = "10.0.2.0/24"
   availability_zone = "us-east-1b"
   tags = {
@@ -25,7 +25,7 @@ resource "aws_subnet" "liorm-TF-easy-us-east-1b" {
 }
 
 resource "aws_internet_gateway" "liorm-TF-easy-igw" {
-  vpc_id = ${var.VPC_ID}
+  vpc_id = "${var.VPC_ID}"
   tags = {
     Name = "liorm-TF-easy-igw"
   }
@@ -33,7 +33,7 @@ resource "aws_internet_gateway" "liorm-TF-easy-igw" {
 
 
 resource "aws_route_table" "liorm-TF-easy-RT" {
-  vpc_id = ${var.VPC_ID}
+  vpc_id = "${var.VPC_ID}"
 
   tags = {
     Name = "liorm-TF-easy-RT" 
@@ -42,25 +42,25 @@ resource "aws_route_table" "liorm-TF-easy-RT" {
 
 
 resource "aws_route" "default_route" {
-  route_table_id = ${var.RT_ID}
+  route_table_id = "${var.RT_ID}"
   destination_cidr_block = "0.0.0.0/0"
   gateway_id = aws_internet_gateway.liorm-TF-easy-igw.id
 }
 
 resource "aws_route_table_association" "liorm-TF-easy-pub-assoc-1a" {
-    subnet_id = ${var.SUBNET_1A}
-    route_table_id = ${var.RT_ID}
+    subnet_id = "${var.SUBNET_1A}"
+    route_table_id = "${var.RT_ID}"
 }
 
 resource "aws_route_table_association" "liorm-TF-easy-pub-assoc-1b" {
-    subnet_id = ${var.SUBNET_1B}
-    route_table_id = a${var.RT_ID}
+    subnet_id = "${var.SUBNET_1B}"
+    route_table_id = "${var.RT_ID}"
 }
 
 resource "aws_security_group" "liorm-TF-easy-SG" {
   name        = "liorm-TF-easy-SG"
   description = "Allow incoming HTTP traffic from your IP"
-  vpc_id = ${var.VPC_ID}
+  vpc_id = "${var.VPC_ID}"
   
   ingress {
     from_port   = 80
