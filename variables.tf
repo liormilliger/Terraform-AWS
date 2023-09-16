@@ -7,6 +7,17 @@ variable "VPC_ID" {
   description = "ID of my vpc"
 }
 
+variable "HOME_IP" {
+  description = "IP address at home"
+  type        = string
+}
+
+
+variable "KARMI_IP" {
+  description = "IP at KARMI house"
+  type        = string
+}
+
 variable "SG" {
   type        = list(string)
   description = "SG for liorm-TF-easy instances"
