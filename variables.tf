@@ -1,29 +1,29 @@
 variable "AMI" {
-type = string
-description = "Image for ubuntu instance"
+  type        = string
+  description = "Image for ubuntu instance"
 }
 
 variable "VPC_ID" {
-description = "ID of my vpc"
+  description = "ID of my vpc"
 }
 
 variable "SG" {
-type = list(string)
-description = "SG for liorm-TF-easy instances"
+  type        = list(string)
+  description = "SG for liorm-TF-easy instances"
 }
 
 variable "RT_ID" {
-description = "Route Table ID"
+  description = "Route Table ID"
 }
 
 variable "SUBNET_1A" {
-description = "us-east-1a subnet"
+  description = "us-east-1a subnet"
 }
 
 variable "SUBNET_1B" {
-description = "us-east-1b subnet"
+  description = "us-east-1b subnet"
 }
 
 variable "TG_ARN" {
-description = "Target Group Amazon Resource Name (ARN)"
+  description = "Target Group Amazon Resource Name (ARN)"
 }
