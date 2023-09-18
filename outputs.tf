@@ -3,22 +3,18 @@ output "VPC_ID" {
   value       = aws_vpc.liorm-TF.id
 }
 
-output "RT_ID" {
-  description = "Route Table ID"
-  value       = aws_route_table.liorm-TF.id
+output "Public-IPs-1a" {
+  description = "Public IPs for instances"
+  value       = aws_instance.liorm-EC2-1a[*].public_ip
 }
 
-output "SUBNET_1A" {
-  description = "us-east-1a subnet"
-  value       = aws_subnet.liorm-us-east-1a.id
+output "Public-IPs-1b" {
+  description = "Public IPs for instances"
+  value       = aws_instance.liorm-EC2-1b[*].public_ip
 }
 
-output "SUBNET_1B" {
-  description = "us-east-1b subnet"
-  value       = aws_subnet.liorm-us-east-1b.id
+output "load_balancer_dns" {
+  description = "DNS Name for Load Balancer"
+  value = aws_lb.liorm-TF.dns_name
 }
 
-output "TG_ARN" {
-  description = "Target Group Amazon Resource Name (ARN)"
-  value       = aws_lb_target_group.liorm-TF.arn
-}

@@ -6,14 +6,14 @@ resource "aws_lb_target_group" "liorm-TF" {
 }
 
 resource "aws_lb_target_group_attachment" "liorm-tg-attach-1a" {
-  count = length(aws_instance.liorm-EC2-1a.*.id)
+  count            = length(aws_instance.liorm-EC2-1a.*.id)
   target_group_arn = aws_lb_target_group.liorm-TF.arn
   target_id        = aws_instance.liorm-EC2-1a[count.index].id
   port             = 80
 }
 
 resource "aws_lb_target_group_attachment" "liorm-tg-attach-1b" {
-  count = length(aws_instance.liorm-EC2-1b.*.id)
+  count            = length(aws_instance.liorm-EC2-1b.*.id)
   target_group_arn = aws_lb_target_group.liorm-TF.arn
   target_id        = aws_instance.liorm-EC2-1b[count.index].id
   port             = 80
