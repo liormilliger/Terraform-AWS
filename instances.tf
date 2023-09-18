@@ -4,6 +4,8 @@ resource "aws_key_pair" "liorm-tf-key_rsa" {
 }
 
 resource "aws_instance" "liorm-TF-easy-EC2-1a" {
+  count = 2
+
   ami                    = var.AMI
   instance_type          = "t3.micro"
   key_name               = aws_key_pair.liorm-tf-key.id
@@ -17,6 +19,8 @@ resource "aws_instance" "liorm-TF-easy-EC2-1a" {
 }
 
 resource "aws_instance" "liorm-TF-easy-EC2-1b" {
+  count = 2
+  
   ami                    = var.AMI
   instance_type          = "t3.micro"
   key_name               = aws_key_pair.liorm-tf-key.id
